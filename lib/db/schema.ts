@@ -168,3 +168,30 @@ export const stream = pgTable(
 );
 
 export type Stream = InferSelectModel<typeof stream>;
+
+// ============================================================================
+// Eligibility Run Schema
+// ============================================================================
+
+/**
+ * Stores saved eligibility check runs for authenticated users.
+ * Answers and results are stored as JSON for flexibility.
+ */
+export const eligibilityRun = pgTable("EligibilityRun", {
+  id: uuid("id").primaryKey().notNull().defaultRandom(),
+  userId: uuid("userId")
+    .notNull()
+    .references(() => user.id),
+  /** Country code (e.g., 'jm' for Jamaica) */
+  countryCode: varchar("countryCode", { length: 10 }).notNull(),
+  /** Version of the rules used (for auditing) */
+  rulesVersion: varchar("rulesVersion", { length: 50 }).notNull(),
+  /** User's answers as JSON: Record<string, string> */
+  answers: json("answers").notNull(),
+  /** Eligibility result as JSON */
+  result: json("result").notNull(),
+  /** When the check was performed */
+  createdAt: timestamp("createdAt").notNull().defaultNow(),
+});
+
+export type EligibilityRunRecord = InferSelectModel<typeof eligibilityRun>;

@@ -46,7 +46,7 @@ export const HeroSection = () => {
           {/* CTA Buttons */}
           <div className="flex animate-fade-in-up flex-col items-center justify-center gap-4 opacity-0 delay-300 sm:flex-row">
             <Button asChild size="lg" variant="hero">
-              <Link href="/chat">
+              <Link href="#countries">
                 Discover Your Eligibility
                 <ArrowRight className="ml-2" />
               </Link>

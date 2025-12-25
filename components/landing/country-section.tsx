@@ -23,7 +23,7 @@ const countries: Country[] = [
     subtitle:
       "Visa-free access to 80+ countries. The right to live, work, and own property in the Caribbean.",
     active: true,
-    link: "/chat?country=jm",
+    link: "/check?country=jm",
   },
   {
     code: "it",
@@ -54,7 +54,7 @@ export const CountrySection = () => {
   };
 
   return (
-    <section className="py-24 md:py-32">
+    <section className="py-24 md:py-32" id="countries">
       <div className="container px-4">
         <div className="mb-16 text-center">
           <h2 className="mb-4 font-bold text-3xl text-foreground md:text-5xl">

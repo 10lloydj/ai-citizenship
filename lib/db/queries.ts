@@ -23,6 +23,8 @@ import {
   chat,
   type DBMessage,
   document,
+  type EligibilityRunRecord,
+  eligibilityRun,
   message,
   type Suggestion,
   stream,
@@ -597,6 +599,89 @@ export async function getStreamIdsByChatId({ chatId }: { chatId: string }) {
     throw new ChatSDKError(
       "bad_request:database",
       "Failed to get stream ids by chat id"
+    );
+  }
+}
+
+// ============================================================================
+// Eligibility Run Queries
+// ============================================================================
+
+export async function saveEligibilityRun({
+  userId,
+  countryCode,
+  rulesVersion,
+  answers,
+  result,
+}: {
+  userId: string;
+  countryCode: string;
+  rulesVersion: string;
+  answers: Record<string, string>;
+  result: Record<string, unknown>;
+}) {
+  try {
+    const [savedRun] = await db
+      .insert(eligibilityRun)
+      .values({
+        userId,
+        countryCode,
+        rulesVersion,
+        answers,
+        result,
+        createdAt: new Date(),
+      })
+      .returning();
+
+    return savedRun;
+  } catch (_error) {
+    throw new ChatSDKError(
+      "bad_request:database",
+      "Failed to save eligibility run"
+    );
+  }
+}
+
+export async function getEligibilityRunsByUserId({
+  userId,
+  limit = 50,
+}: {
+  userId: string;
+  limit?: number;
+}): Promise<EligibilityRunRecord[]> {
+  try {
+    return await db
+      .select()
+      .from(eligibilityRun)
+      .where(eq(eligibilityRun.userId, userId))
+      .orderBy(desc(eligibilityRun.createdAt))
+      .limit(limit);
+  } catch (_error) {
+    throw new ChatSDKError(
+      "bad_request:database",
+      "Failed to get eligibility runs by user id"
+    );
+  }
+}
+
+export async function getEligibilityRunById({
+  id,
+  userId,
+}: {
+  id: string;
+  userId: string;
+}): Promise<EligibilityRunRecord | null> {
+  try {
+    const [run] = await db
+      .select()
+      .from(eligibilityRun)
+      .where(and(eq(eligibilityRun.id, id), eq(eligibilityRun.userId, userId)));
+
+    return run ?? null;
+  } catch (_error) {
+    throw new ChatSDKError(
+      "bad_request:database",
+      "Failed to get eligibility run by id"
     );
   }
 }
