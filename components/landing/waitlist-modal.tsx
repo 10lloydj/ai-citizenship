@@ -54,10 +54,10 @@ export const WaitlistModal = ({
 
     setIsSubmitting(true);
 
-    // Simulate API call - in production, this would save to a database
+    // TODO: Add mailerLite + DB. Simulate API call - in production, this would save to a database
     await new Promise((resolve) => setTimeout(resolve, 800));
 
-    toast.success("You're on the list! 🎉", {
+    toast.success("You're on the list!", {
       description: `We'll notify you when ${country?.name} is available.`,
     });
 

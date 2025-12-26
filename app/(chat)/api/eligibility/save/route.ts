@@ -19,7 +19,7 @@ const requestSchema = z.object({
     status: z.enum(["eligible", "not_eligible", "needs_info"]),
     explanation: z.string(),
     reasoning: z.string().optional(),
-    documents: z.array(
+    documents: z.array
       z.object({
         name: z.string(),
         description: z.string(),

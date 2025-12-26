@@ -31,7 +31,7 @@ export const CTASection = () => {
 
           {/* CTA Button */}
           <Button asChild size="lg" variant="hero">
-            <Link href="/chat">
+            <Link href="/#countries">
               Start Your Journey
               <ArrowRight className="ml-2" />
             </Link>

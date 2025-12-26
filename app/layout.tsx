@@ -7,10 +7,31 @@ import "./globals.css";
 import { SessionProvider } from "next-auth/react";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://chat.vercel.ai"),
+  // TODO: Update to the actual domain once it's registered (same in the @sitemap.ts)
+  metadataBase: new URL("https://citizenshipcheck.com"),
   title: "Citizenship Eligibility Checker",
   description:
     "Discover if you qualify for citizenship by descent—and unlock visa-free travel, property rights, and a lifelong connection to your ancestral home.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/images/logo.png", type: "image/png" },
+    ],
+    apple: "/images/logo.png",
+  },
+  openGraph: {
+    title: "Citizenship Eligibility Checker",
+    description:
+      "Discover if you qualify for citizenship by descent—and unlock visa-free travel, property rights, and a lifelong connection to your ancestral home.",
+    images: ["/images/logo.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Citizenship Eligibility Checker",
+    description:
+      "Discover if you qualify for citizenship by descent—and unlock visa-free travel, property rights, and a lifelong connection to your ancestral home.",
+    images: ["/images/logo.png"],
+  },
 };
 
 export const viewport = {

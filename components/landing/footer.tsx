@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const CURRENT_YEAR = 2025;
 
 export const Footer = () => {
@@ -5,7 +7,14 @@ export const Footer = () => {
     <footer className="border-border/50 border-t py-12">
       <div className="container px-4">
         {/* Logo and tagline */}
-        <div className="mb-8 text-center">
+        <div className="mb-8 flex flex-col items-center text-center">
+          <Image
+            alt="Citizenship Eligibility Checker"
+            className="mb-3 h-12 w-12"
+            height={48}
+            src="/images/logo.png"
+            width={48}
+          />
           <h3 className="mb-2 font-bold text-foreground text-xl">
             Citizenship Eligibility Checker
           </h3>
