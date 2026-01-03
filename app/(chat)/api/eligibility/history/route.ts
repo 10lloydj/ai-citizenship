@@ -4,6 +4,9 @@ import { getEligibilityRunsByUserId } from "@/lib/db/queries";
 import { getCountryFlag, getCountryName } from "@/lib/eligibility/countries";
 import type { EligibilityResult } from "@/lib/eligibility/types";
 
+// Force dynamic to prevent static prerendering (auth requires headers)
+export const dynamic = "force-dynamic";
+
 /**
  * GET /api/eligibility/history
  *

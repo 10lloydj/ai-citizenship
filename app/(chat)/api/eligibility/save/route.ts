@@ -4,6 +4,9 @@ import { auth } from "@/app/(auth)/auth";
 import { saveEligibilityRun } from "@/lib/db/queries";
 import { getCountryRules, isCountryActive } from "@/lib/eligibility/countries";
 
+// Force dynamic to prevent static prerendering (auth requires headers)
+export const dynamic = "force-dynamic";
+
 /**
  * POST /api/eligibility/save
  *
