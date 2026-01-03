@@ -24,7 +24,7 @@ export function Navbar() {
     <header className="fixed top-0 right-0 left-0 z-50 border-border/50 border-b bg-background/80 backdrop-blur-md">
       <div className="container flex h-16 items-center justify-between px-4">
         {/* Logo */}
-        {/* TODO: Fix the log or create a better one */}
+        {/* TODO: Fix the logo or create a better one */}
         <Link className="flex items-center gap-2" href="/">
           <Image
             alt="Citizenship Check"
