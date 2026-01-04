@@ -6,28 +6,24 @@ const benefits = [
     title: "Freedom",
     description:
       "Visa-free travel to 80+ countries. Live, work, and invest without restrictions.",
-    emoji: "🌍",
   },
   {
     icon: Home,
     title: "Belonging",
     description:
       "Legal right to live in your ancestral homeland. Return not as a tourist, but as a citizen.",
-    emoji: "🏠",
   },
   {
     icon: Shield,
     title: "Security",
     description:
-      "A second passport is a hedge against uncertainty—political, economic, and personal.",
-    emoji: "🔐",
+      "A second passport is a hedge against uncertainty.",
   },
   {
     icon: Gift,
     title: "Legacy",
     description:
-      "Pass down more than stories. Pass citizenship to your children and grandchildren.",
-    emoji: "🎁",
+      "Pass citizenship to your children and grandchildren.",
   },
 ];
 
@@ -55,8 +51,8 @@ export const BenefitsSection = () => {
               <div className="absolute top-0 right-0 h-20 w-20 rounded-tr-2xl rounded-bl-[4rem] bg-gradient-gold opacity-5" />
 
               {/* Icon */}
-              <div className="mb-6">
-                <span className="text-4xl">{benefit.emoji}</span>
+              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10">
+                <benefit.icon className="h-7 w-7 text-primary" />
               </div>
 
               {/* Content */}

@@ -1,6 +1,10 @@
 @import "tailwindcss";
 @import "katex/dist/katex.min.css";
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* include utility classes in streamdown */
 @source '../node_modules/streamdown/dist/index.js';
 
