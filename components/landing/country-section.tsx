@@ -39,6 +39,14 @@ const countries: Country[] = [
     subtitle: "EU passport. Deep roots. A growing economy.",
     active: false,
   },
+  {
+    code: "ng",
+    name: "Nigeria",
+    flag: "🇳🇬",
+    subtitle:
+      "Africa's largest economy. Connect with your heritage and unlock opportunities.",
+    active: false,
+  },
 ];
 
 export const CountrySection = () => {
@@ -126,7 +134,7 @@ export const CountrySection = () => {
                   </Button>
                 ) : (
                   <Button
-                    className="group w-full"
+                    className="group w-full cursor-pointer"
                     onClick={() =>
                       handleWaitlistClick({
                         name: country.name,
@@ -136,7 +144,7 @@ export const CountrySection = () => {
                     type="button"
                     variant="outline"
                   >
-                    <Bell className="mr-2 h-4 w-4" />
+                    <Bell className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1" />
                     Notify Me
                   </Button>
                 )}

@@ -82,6 +82,21 @@ export const countries: CountryMetadata[] = [
       "Rich cultural heritage",
     ],
   },
+  {
+    code: "ng",
+    name: "Nigeria",
+    flag: "🇳🇬",
+    shortDescription:
+      "Africa's largest economy. Connect with your heritage and unlock opportunities.",
+    status: "coming_soon",
+    visaFreeCountries: 46,
+    benefits: [
+      "Connect with African heritage",
+      "Access to Africa's largest economy",
+      "Business and investment opportunities",
+      "Dual citizenship allowed",
+    ],
+  },
 ];
 
 // ============================================================================

@@ -132,7 +132,6 @@ export default function HistoryPage() {
   if (history.length === 0) {
     return (
       <div className="container flex min-h-[60vh] flex-col items-center justify-center px-4 py-12 text-center">
-        <div className="mb-6 text-6xl">📋</div>
         <h1 className="mb-4 font-bold text-2xl text-foreground">
           No History Yet
         </h1>
@@ -168,7 +167,7 @@ export default function HistoryPage() {
             const config = statusConfig[item.status];
             const StatusIcon = config.icon;
             const date = new Date(item.createdAt);
-
+// TODO: Clickable drop down items to display the questions and answers of the eligibility check
             return (
               <div
                 className="group rounded-xl border border-border/50 bg-card p-6 transition-all hover:border-border hover:shadow-md"

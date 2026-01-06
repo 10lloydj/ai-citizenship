@@ -9,7 +9,7 @@ import { AuthForm } from "@/components/auth-form";
 import { SubmitButton } from "@/components/submit-button";
 import { toast } from "@/components/toast";
 import { type LoginActionState, login } from "../actions";
-
+// TODO: Add a navbar to the login page
 export default function Page() {
   const router = useRouter();
 

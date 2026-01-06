@@ -8,7 +8,7 @@ import { AuthForm } from "@/components/auth-form";
 import { SubmitButton } from "@/components/submit-button";
 import { toast } from "@/components/toast";
 import { type RegisterActionState, register } from "../actions";
-
+// TODO: Add a navbar to the register page
 export default function Page() {
   const router = useRouter();
 
